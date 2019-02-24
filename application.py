@@ -19,10 +19,8 @@ def create_app():
 
     ########## BLUEPRINTS ###########
     from core.views import core
-    from customers.views import customer_blueprint
 
     app.register_blueprint(core)
-    app.register_blueprint(customer_blueprint)
 
 
     return app 
