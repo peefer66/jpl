@@ -4,4 +4,4 @@ core = Blueprint('core',__name__)
 
 @core.route('/')
 def index():
-    return 'Hellp There'
+    return 'Hello There'
