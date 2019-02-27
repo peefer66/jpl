@@ -6,6 +6,7 @@ from flask_login import LoginManager
 ####### CREATE DB ##########
 db = SQLAlchemy()
 
+login_manager = LoginManager()
 
 
 
@@ -20,8 +21,9 @@ def create_app():
     migrate = Migrate(app,db)
 
     ######### LOGIN ################
-    login_manager = LoginManager()
+    
     login_manager.init_app(app)
+    login_manager.login_view = 'users_bp.login'
         
 
     ########## BLUEPRINTS ###########
