@@ -7,4 +7,4 @@ DB_PASSWORD=aWBiM02
 DB_HOST=localhost
 DATABASE_NAME=jacques
 MYSQL_ROOT_PASSWORD=aWBiM02
-BLOG_NAME='Jaques Products'
+APP_NAME='Jacques Products'
