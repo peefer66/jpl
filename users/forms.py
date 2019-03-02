@@ -38,14 +38,13 @@ class RegisterForm(FlaskForm):
             raise ValidationError (f'User with email {field.data} has already registered')
         
 
-
-
-
-
 ##############################
 ########## LOGIN #############
 ##############################
-
+class LoginForm(FlaskForm):
+    username = StringField('Name',validators=[InputRequired()])
+    password = PasswordField('Password',validators=[InputRequired()])
+    submit = SubmitField('Login')
 
 ##############################
 ######### UPDATE #############
