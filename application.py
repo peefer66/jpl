@@ -27,12 +27,12 @@ def create_app():
         
 
     ########## BLUEPRINTS ###########
-    from core.views import core
+    from core.views import core_bp
     from customers.views import customer_bp
     from compounds.views import compound_bp
     from users.views import user_bp
 
-    app.register_blueprint(core)
+    app.register_blueprint(core_bp)
     app.register_blueprint(customer_bp)
     app.register_blueprint(compound_bp)
     app.register_blueprint(user_bp)
