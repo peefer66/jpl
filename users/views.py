@@ -49,11 +49,13 @@ def login():
                 return redirect(next)
     return render_template('users/login.html', form=form)
 
-
+####################
 ###### LOGOUT ######
+####################
 @user_bp.route('/logout')
 @login_required
 def logout():
+    logout_user()
     return 'Logged Out'
 
 ###### DELETE ######
