@@ -53,7 +53,7 @@ def login():
 ###### LOGOUT ######
 ####################
 @user_bp.route('/logout')
-@login_required
+
 def logout():
     logout_user()
     return 'Logged Out'

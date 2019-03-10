@@ -23,7 +23,7 @@ def create_app():
     ######### LOGIN ################
     
     login_manager.init_app(app)
-    login_manager.login_view = 'users_bp.login'
+    login_manager.login_view = 'user_bp.login'
         
 
     ########## BLUEPRINTS ###########
