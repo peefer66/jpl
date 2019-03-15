@@ -56,7 +56,8 @@ def login():
 
 def logout():
     logout_user()
-    return 'Logged Out'
+    flash('You are now logged out')
+    return redirect(url_for('.login'))
 
 ####################
 ###### DELETE ######
