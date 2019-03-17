@@ -9,10 +9,15 @@ from flask_login import current_user
 from customers.models import Customer
 
 class CustomerForm(FlaskForm):
-    customer_name = StringField('Customer Name', validators=[InputRequired(),Length(max=100)])
+    name = StringField('Customer Name', validators=[InputRequired(),Length(max=100)])
     submit = SubmitField('Register Customer')
 
+    #########################
+    ### CUSTOM VALIDATORS ###
+    #########################
 
-    def check_customer(self,field):
-        if Customer.query.filter_by(customer_name=field.data).first():
-            raise ValidationError (f'User {field.data} is already registered')
+    def validate_name(self,name):
+        # Checkif name already in the database 
+        customer = Customer.query.filter_by(name=name.data).first()
+        if customer is not None:
+            raise ValidationError ('Customer already exists')
