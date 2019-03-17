@@ -9,6 +9,7 @@ from users.forms import RegisterForm, LoginForm
 user_bp = Blueprint('user_bp',__name__)
 
 #####################
+
 ###### REGSTER ######
 #####################
 
@@ -41,7 +42,7 @@ def login():
             if check_password_hash(user.password, form.password.data):
                 login_user(user)
                 #flash('Login successful')
-            # if user has been redirected from another page 
+           # if user has been redirected from another page 
             next = request.args.get('next')
 
             if next == None or not next[0] == '/':

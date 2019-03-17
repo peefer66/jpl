@@ -1,0 +1,28 @@
+{% extends  'base.html' %}
+
+{% block nav %}{% include 'nav.html' %}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="offset-md-2 col-md-8">
+      
+        <h4>Customer Registration</h4>
+    
+        {% from "_formhelpers.html" import render_field %}
+        <form method="POST" action="{{ url_for('customer_bp.new_customer')}}" role="form">
+    
+          {{ form.hidden_tag() }}
+    
+          {{ render_field(form.customer_name, class='form-control') }}
+              
+          <button type="submit" class="btn btn-primary">Register</button>
+    
+        </form>
+    
+      </div>
+       
+      
+</div>
+
+
+{% endblock%}
