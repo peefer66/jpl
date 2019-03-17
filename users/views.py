@@ -40,7 +40,7 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user)
-                flash('Login successful')
+                #flash('Login successful')
             # if user has been redirected from another page 
             next = request.args.get('next')
 
@@ -56,7 +56,8 @@ def login():
 
 def logout():
     logout_user()
-    return 'Logged Out'
+    flash('You are now logged out')
+    return redirect(url_for('.login'))
 
 ####################
 ###### DELETE ######
